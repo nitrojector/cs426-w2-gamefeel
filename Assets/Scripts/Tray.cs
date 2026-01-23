@@ -4,8 +4,18 @@ using UnityEngine.InputSystem;
 
 public class Tray : MonoBehaviour
 {
-    private const float TraySpeed = 20f;
-    private const float XBound = 12.0f;
+    
+    [SerializeField] private float TraySpeed = 20f;
+
+    [SerializeField] private float SideForceIntensity = 8 * 50.0f;
+
+    private float XBound
+    {
+        get
+        {
+            return 20.0f - transform.localScale.x / 2;
+        }
+    }
     
     InputAction moveAction;
     
@@ -25,10 +35,14 @@ public class Tray : MonoBehaviour
     private void OnCollisionEnter(Collision other)
     {
         Vector3 otherPos = other.transform.position;
-        float diff = otherPos.x - transform.position.x;
+        float diff = (otherPos.x - transform.position.x) / (transform.localScale.x / 2);
         
-        other.rigidbody.AddForce(new Vector3(50.0f * diff, 0, 0));
+
+        Vector3 force = new Vector3(SideForceIntensity * diff, 0, 0);
         
-        Debug.Log("Tray collided with " + other.gameObject.name);
+        Debug.Log("Tray collided with " + other.gameObject.name + "with force: " + force);
+        
+        other.rigidbody.AddForce(force);
+        
     }
 }
