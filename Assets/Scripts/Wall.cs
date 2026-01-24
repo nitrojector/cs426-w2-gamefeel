@@ -3,9 +3,11 @@ using UnityEngine;
 public class Wall : MonoBehaviour
 {
     private static readonly int EmissionColor = Shader.PropertyToID("_EmissionColor");
+    private Material _material;
     
-    void Start()
+    void Awake()
     {
+        _material = GetComponent<Renderer>().material;
     }
 
     // Update is called once per frame
@@ -16,8 +18,7 @@ public class Wall : MonoBehaviour
 
     public void AdjustColorWithBallColor(Color color)
     {
-        var mat = GetComponent<Renderer>().material;
-        mat.color = Color.Lerp(mat.color, color, Random.Range(0.2f, 0.8f));
-        mat.SetColor(EmissionColor, color * 2.0f);
+        _material.color = Color.Lerp(_material.color, color, Random.Range(0.2f, 0.8f));
+        _material.SetColor(EmissionColor, _material.color * 2.0f);
     }
 }

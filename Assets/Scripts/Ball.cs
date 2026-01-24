@@ -22,7 +22,7 @@ public class Ball : MonoBehaviour
     public void SetColor(Color color)
     {
         _material.color = color;
-        _material.SetColor(EmissionColor, color * 2.0f);
+        _material.SetColor(EmissionColor, color * 3.0f);
     }
 
     private void OnCollisionEnter(Collision other)

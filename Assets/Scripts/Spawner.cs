@@ -34,7 +34,7 @@ public class Spawner : MonoBehaviour
             float randomY = Random.Range(0, spawnPosRangeY);
             Vector3 spawnPos = spawnPosCenter + new Vector3(randomX, randomY, 0);
             var go = Instantiate(ballPrefab, spawnPos, Quaternion.identity);
-            go.SetColor(Random.ColorHSV());
+            go.SetColor(Random.ColorHSV(0.0f, 1.0f, 0.0f, 1.0f, 0.8f, 1.0f));
             yield return new WaitForSeconds(6.0f);
         }
     }

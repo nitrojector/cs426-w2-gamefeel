@@ -7,6 +7,8 @@ public class VFXManager : MonoBehaviour
     
     public static VFXManager Instance { get; private set; }
 
+    public static bool EnableScreenShake { get; set; } = true;
+    
     private readonly List<Shake> activeShakes = new List<Shake>();
     private Vector3 lastPosOffset = Vector3.zero;
     private float lastRotOffset = 0f;
@@ -29,6 +31,8 @@ public class VFXManager : MonoBehaviour
     // Public: enqueue a new shake (addable). The actual per-frame execution happens in FixedUpdate.
     public void ScreenShake(Vector2 dir, float rot, float intensity, float duration)
     {
+        if (!EnableScreenShake) return;
+        
         if (duration <= 0f || intensity <= 0f)
             return;
 
