@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54f8a3f412f9f49039d0a78597a65099, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Spawner
-  ballPrefab: {fileID: 9159314601016924333, guid: 587de88243cad43a6914ef7bf7dadd54, type: 3}
+  ballPrefab: {fileID: 6846979500215023315, guid: 587de88243cad43a6914ef7bf7dadd54, type: 3}
   spawnPosCenter: {x: 0, y: 30, z: 32}
   spawnPosRangeX: 10
   spawnPosRangeY: 8
@@ -271,7 +271,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 278876078}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -50, z: 32}
   m_LocalScale: {x: 40, y: 1, z: 32}
   m_ConstrainProportionsScale: 0
@@ -395,7 +395,7 @@ MonoBehaviour:
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
   m_RenderPostProcessing: 1
-  m_Antialiasing: 0
+  m_Antialiasing: 1
   m_AntialiasingQuality: 2
   m_StopNaN: 0
   m_Dithering: 0
@@ -649,6 +649,7 @@ GameObject:
   - component: {fileID: 920037695}
   - component: {fileID: 920037694}
   - component: {fileID: 920037698}
+  - component: {fileID: 920037699}
   m_Layer: 0
   m_Name: 'Tray [S]'
   m_TagString: Untagged
@@ -762,6 +763,103 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Tray
   TraySpeed: 20
   SideForceIntensity: 400
+--- !u!82 &920037699
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 920037693}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: 012e7aab79ee84cf196cbeb43fe85641, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1551515066
 GameObject:
   m_ObjectHideFlags: 0
@@ -885,6 +983,7 @@ GameObject:
   - component: {fileID: 1788056829}
   - component: {fileID: 1788056828}
   - component: {fileID: 1788056827}
+  - component: {fileID: 1788056831}
   m_Layer: 0
   m_Name: Right
   m_TagString: Untagged
@@ -938,7 +1037,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ee02939c3a57e41da84b40292e00b2cd, type: 2}
+  - {fileID: 2100000, guid: 45bc00e2daa1a4d57ad96e936d4435e0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -984,6 +1083,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1788056831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1788056826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 602c82b25bf1c49cb87efbfd60add789, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RightWall
 --- !u!1 &2133196405
 GameObject:
   m_ObjectHideFlags: 0
@@ -996,6 +1107,7 @@ GameObject:
   - component: {fileID: 2133196408}
   - component: {fileID: 2133196407}
   - component: {fileID: 2133196406}
+  - component: {fileID: 2133196410}
   m_Layer: 0
   m_Name: Left
   m_TagString: Untagged
@@ -1049,7 +1161,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2589987901a5d4fee9d5c00e810e99ab, type: 2}
+  - {fileID: 2100000, guid: 322f4c68f4c3b4cd985e2c83f7633839, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1095,6 +1207,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2133196410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2133196405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 602c82b25bf1c49cb87efbfd60add789, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LeftWall
 --- !u!1001 &3936596869096633444
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1143,6 +1267,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5355158720551047029, guid: 587de88243cad43a6914ef7bf7dadd54, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: cfcaef36a42f64627aecdde663e2d172, type: 2}
     - target: {fileID: 9159314601016924333, guid: 587de88243cad43a6914ef7bf7dadd54, type: 3}
       propertyPath: m_Name
       value: TheBall
@@ -1166,8 +1294,8 @@ SceneRoots:
   - {fileID: 1551515070}
   - {fileID: 2133196409}
   - {fileID: 1788056830}
-  - {fileID: 278876082}
-  - {fileID: 3936596869096633444}
   - {fileID: 920037697}
+  - {fileID: 3936596869096633444}
+  - {fileID: 278876082}
   - {fileID: 173233395}
   - {fileID: 826638598}

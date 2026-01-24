@@ -1,10 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Spawner : MonoBehaviour
 {
-    [SerializeField] GameObject ballPrefab;
+    [SerializeField] Ball ballPrefab;
 
     [SerializeField] Vector3 spawnPosCenter;
     
@@ -31,8 +33,10 @@ public class Spawner : MonoBehaviour
             float randomX = Random.Range(-spawnPosRangeX, spawnPosRangeX);
             float randomY = Random.Range(0, spawnPosRangeY);
             Vector3 spawnPos = spawnPosCenter + new Vector3(randomX, randomY, 0);
-            Instantiate(ballPrefab, spawnPos, Quaternion.identity);
+            var go = Instantiate(ballPrefab, spawnPos, Quaternion.identity);
+            go.SetColor(Random.ColorHSV());
             yield return new WaitForSeconds(6.0f);
         }
     }
+
 }

@@ -8,6 +8,8 @@ public class Tray : MonoBehaviour
     [SerializeField] private float TraySpeed = 20f;
 
     [SerializeField] private float SideForceIntensity = 8 * 50.0f;
+    
+    private AudioSource _audioSource;
 
     private float XBound
     {
@@ -19,9 +21,10 @@ public class Tray : MonoBehaviour
     
     InputAction moveAction;
     
-    void Start()
+    void Awake()
     {
         moveAction = InputSystem.actions.FindAction("Move");
+        _audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -43,6 +46,6 @@ public class Tray : MonoBehaviour
         Debug.Log("Tray collided with " + other.gameObject.name + "with force: " + force);
         
         other.rigidbody.AddForce(force);
-        
+        _audioSource.Play();
     }
 }
