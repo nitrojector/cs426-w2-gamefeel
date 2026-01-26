@@ -45,7 +45,12 @@ public class Tray : MonoBehaviour
 
         if (EffectDirector.Enables(EffectType.SFX))
         {
+            float randomOffset = UnityEngine.Random.Range(-pitchRandomRange, pitchRandomRange);
+            _audioSource.pitch = 2.0f + randomOffset;
             _audioSource.Play();
         }
     }
 }
+
+}
+
