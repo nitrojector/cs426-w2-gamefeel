@@ -8,6 +8,8 @@ public class Tray : MonoBehaviour
 
     [SerializeField] private float SideForceIntensity = 8 * 50.0f;
 
+    [SerializeField] private float pitchRandomRange = 0.05f;
+
     private AudioSource _audioSource;
 
     private float XBound
@@ -45,10 +47,10 @@ public class Tray : MonoBehaviour
 
         if (EffectDirector.Enables(EffectType.SFX))
         {
-            float randomOffset = UnityEngine.Random.Range(-pitchRandomRange, pitchRandomRange);
-            _audioSource.pitch = 2.0f + randomOffset;
-            _audioSource.Play();
         }
+        float randomOffset = UnityEngine.Random.Range(-pitchRandomRange, pitchRandomRange);
+        _audioSource.pitch = 2.0f + randomOffset;
+        _audioSource.Play();
     }
 
 
