@@ -552,6 +552,7 @@ GameObject:
   m_Component:
   - component: {fileID: 826638598}
   - component: {fileID: 826638597}
+  - component: {fileID: 826638599}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -587,6 +588,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &826638599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 826638596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7be1464ecf344c3ab19f70b4e57048b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EffectDirector
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -1267,17 +1280,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5355158720551047029, guid: 587de88243cad43a6914ef7bf7dadd54, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: cfcaef36a42f64627aecdde663e2d172, type: 2}
     - target: {fileID: 9159314601016924333, guid: 587de88243cad43a6914ef7bf7dadd54, type: 3}
       propertyPath: m_Name
       value: TheBall
-      objectReference: {fileID: 0}
-    - target: {fileID: 9159314601016924333, guid: 587de88243cad43a6914ef7bf7dadd54, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

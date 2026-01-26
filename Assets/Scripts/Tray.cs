@@ -4,23 +4,19 @@ using UnityEngine.InputSystem;
 
 public class Tray : MonoBehaviour
 {
-    
     [SerializeField] private float TraySpeed = 20f;
 
     [SerializeField] private float SideForceIntensity = 8 * 50.0f;
-    
+
     private AudioSource _audioSource;
 
     private float XBound
     {
-        get
-        {
-            return 20.0f - transform.localScale.x / 2;
-        }
+        get { return 20.0f - transform.localScale.x / 2; }
     }
-    
+
     InputAction moveAction;
-    
+
     void Awake()
     {
         moveAction = InputSystem.actions.FindAction("Move");
@@ -39,13 +35,17 @@ public class Tray : MonoBehaviour
     {
         Vector3 otherPos = other.transform.position;
         float diff = (otherPos.x - transform.position.x) / (transform.localScale.x / 2);
-        
+
 
         Vector3 force = new Vector3(SideForceIntensity * diff, 0, 0);
-        
+
         Debug.Log("Tray collided with " + other.gameObject.name + "with force: " + force);
-        
+
         other.rigidbody.AddForce(force);
-        _audioSource.Play();
+
+        if (EffectDirector.Enables(EffectType.SFX))
+        {
+            _audioSource.Play();
+        }
     }
 }

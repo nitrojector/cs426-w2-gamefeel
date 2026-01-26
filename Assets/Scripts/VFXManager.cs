@@ -4,11 +4,9 @@ using UnityEngine;
 public class VFXManager : MonoBehaviour
 {
     public Camera mainCamera;
-    
+
     public static VFXManager Instance { get; private set; }
 
-    public static bool EnableScreenShake { get; set; } = true;
-    
     private readonly List<Shake> activeShakes = new List<Shake>();
     private Vector3 lastPosOffset = Vector3.zero;
     private float lastRotOffset = 0f;
@@ -27,12 +25,12 @@ public class VFXManager : MonoBehaviour
         if (mainCamera == null)
             mainCamera = Camera.main;
     }
-    
+
     // Public: enqueue a new shake (addable). The actual per-frame execution happens in FixedUpdate.
     public void ScreenShake(Vector2 dir, float rot, float intensity, float duration)
     {
-        if (!EnableScreenShake) return;
-        
+        if (!EffectDirector.Enables(EffectType.ScreenShake)) return;
+
         if (duration <= 0f || intensity <= 0f)
             return;
 
@@ -105,8 +103,8 @@ public class VFXManager : MonoBehaviour
     // Internal shake representation
     private struct Shake
     {
-        public Vector2 dir;   // preferred direction of shake in local XY
-        public float rot;     // rotation amplitude (degrees)
+        public Vector2 dir; // preferred direction of shake in local XY
+        public float rot; // rotation amplitude (degrees)
         public float intensity;
         public float duration;
         public float elapsed;
