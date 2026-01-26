@@ -50,7 +50,6 @@ public class Tray : MonoBehaviour
             _audioSource.Play();
         }
     }
-}
 
 }
 
