@@ -553,6 +553,7 @@ GameObject:
   - component: {fileID: 826638598}
   - component: {fileID: 826638597}
   - component: {fileID: 826638599}
+  - component: {fileID: 826638600}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -600,6 +601,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7be1464ecf344c3ab19f70b4e57048b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EffectDirector
+--- !u!114 &826638600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 826638596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0187c3c12d754d368a64ef07f9a79304, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  _tray: {fileID: 920037693}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0

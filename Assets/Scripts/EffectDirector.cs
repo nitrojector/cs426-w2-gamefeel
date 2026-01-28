@@ -33,6 +33,8 @@ public class EffectDirector : MonoBehaviour
             Destroy(gameObject);
         else
             Instance = this;
+
+        EnableAll();
     }
 
     private void Update()
