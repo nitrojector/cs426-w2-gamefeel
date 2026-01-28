@@ -7,6 +7,8 @@ public class Ball : MonoBehaviour
     private Material _material;
     private Rigidbody _rb;
 
+    private ParticleSystem _particleSystem;
+
     private float _size = 5.0f;
 
     private void Awake()
@@ -14,6 +16,7 @@ public class Ball : MonoBehaviour
         transform.localScale = Vector3.one * _size;
         _material = GetComponent<Renderer>().material;
         _rb = GetComponent<Rigidbody>();
+        _particleSystem = GetComponentInChildren<ParticleSystem>();
     }
 
     private void Update()
@@ -37,6 +40,11 @@ public class Ball : MonoBehaviour
             var ls = Mathf.Lerp(0.8f * _size, 1.3f * _size, (delta - min) / range) * Vector3.one;
             transform.localScale = ls;
         }
+
+        bool particleIsActive = _particleSystem.gameObject.activeSelf;
+
+        if (particleIsActive != EffectDirector.Enables(EffectType.Particle))
+            _particleSystem.gameObject.SetActive(!particleIsActive);
     }
 
     private void OnDestroy()

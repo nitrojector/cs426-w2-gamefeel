@@ -802,7 +802,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 012e7aab79ee84cf196cbeb43fe85641, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -1297,6 +1297,10 @@ PrefabInstance:
     - target: {fileID: 9159314601016924333, guid: 587de88243cad43a6914ef7bf7dadd54, type: 3}
       propertyPath: m_Name
       value: TheBall
+      objectReference: {fileID: 0}
+    - target: {fileID: 9159314601016924333, guid: 587de88243cad43a6914ef7bf7dadd54, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
